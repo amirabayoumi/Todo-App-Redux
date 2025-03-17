@@ -1,14 +1,14 @@
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <header className="flex justify-between">
+      <header className="m-10 flex justify-between">
         <h1 className="text-2xl font-bold">Todo App</h1>
         <button className="text-2xl font-bold"> ⁕</button>
       </header>
-      <hr />
-      <main>{children}</main>
-      <hr />
-      <footer>Footer</footer>
+
+      <main className="m-10">{children}</main>
+
+      <footer className="m-10">Footer</footer>
     </>
   );
 };

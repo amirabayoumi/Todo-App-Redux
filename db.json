@@ -1,12 +1,6 @@
 {
   "todos": [
     {
-      "id": "1",
-      "text": "Learn React",
-      "completed": true,
-      "category": "Work"
-    },
-    {
       "id": "2",
       "text": "Build a todo app",
       "completed": false,
@@ -89,28 +83,22 @@
       "category": "Learning"
     },
     {
-      "id": "cbd5",
-      "text": "task ",
-      "completed": true
-    },
-    {
-      "id": "66a1",
-      "text": "new task",
-      "completed": false
-    },
-    {
-      "id": "94b7",
-      "completed": false
-    },
-    {
-      "id": "7176",
-      "completed": false
-    },
-    {
       "id": "ef30",
       "text": "new task",
       "completed": false,
       "category": "Personal"
+    },
+    {
+      "id": "dacd",
+      "text": "new task",
+      "completed": false,
+      "category": "Personal"
+    },
+    {
+      "id": "176d",
+      "text": "new task",
+      "completed": false,
+      "category": "Work"
     }
   ],
   "categories": [

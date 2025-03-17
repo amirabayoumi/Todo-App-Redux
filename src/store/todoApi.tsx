@@ -6,10 +6,6 @@ export type Todo = {
   completed: boolean;
   category: string;
 };
-// type category = {
-//     id: string;
-//     name: string
-// }
 
 const todosApi = createApi({
   tagTypes: ["Todos"],
