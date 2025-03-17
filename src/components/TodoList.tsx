@@ -1,11 +1,13 @@
 import { useGetTodosQuery } from "../store/todoApi";
 import TodoItem from "./TodoItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectFilter } from "@/store/filterSlice";
 import { selectPagination } from "@/store/paginationSlice";
 import { useState } from "react";
+import { updateStatic } from "@/store/staticSlice";
 
 const TodoList = () => {
+  const dispatch = useDispatch();
   const perPage = useSelector(selectPagination);
   const { data, error, isLoading } = useGetTodosQuery();
   const filter = useSelector(selectFilter);
@@ -24,6 +26,20 @@ const TodoList = () => {
     return <p>No data found.</p>;
   }
 
+  // Calculate static information
+  const totalTodos = data.length;
+  const activeTodos = data.filter((todo) => !todo.completed).length;
+  const completedTodos = data.filter((todo) => todo.completed).length;
+
+  // Dispatch updateStatic with calculated values
+  dispatch(
+    updateStatic({
+      totalTodos,
+      activeTodos,
+      completedTodos,
+    }),
+  );
+
   const filteredData = data.filter((todo) => {
     const statusMatch =
       filter.statusFilter === "all" ||
@@ -34,6 +50,9 @@ const TodoList = () => {
     return statusMatch && categoryMatch;
   });
 
+  // Dispatch updateStatic with calculated values
+
+  //pagination
   const totalPages = Math.ceil(filteredData.length / perPage.page);
   const startIndex = (page - 1) * perPage.page;
   const endIndex = startIndex + perPage.page;

@@ -10,14 +10,14 @@
     {
       "id": "3",
       "text": "Go for a run",
-      "completed": false,
+      "completed": true,
       "category": "Personal",
       "description": "Run 5 kilometers in the park to maintain fitness and reduce stress."
     },
     {
       "id": "4",
       "text": "Read a book",
-      "completed": false,
+      "completed": true,
       "category": "Personal",
       "description": "Read at least 20 pages of a fiction or self-improvement book."
     },
@@ -31,7 +31,7 @@
     {
       "id": "19",
       "text": "Schedule dentist appointment",
-      "completed": false,
+      "completed": true,
       "category": "Personal",
       "description": "Book an appointment for a routine dental check-up next week."
     },
@@ -52,7 +52,7 @@
     {
       "id": "47",
       "text": "Complete online course module",
-      "completed": false,
+      "completed": true,
       "category": "Learning",
       "description": "Finish the next module in an ongoing online course."
     },
@@ -72,20 +72,20 @@
     {
       "id": "2c77",
       "text": "new task",
-      "completed": false,
+      "completed": true,
       "category": "Shopping"
     },
     {
       "id": "b575",
       "text": "new task",
-      "completed": false,
+      "completed": true,
       "category": "Personal"
     },
     {
-      "id": "04fb",
-      "text": "",
+      "id": "8fa6",
+      "text": "new task",
       "completed": false,
-      "category": "Work"
+      "category": "Personal"
     }
   ],
   "categories": [

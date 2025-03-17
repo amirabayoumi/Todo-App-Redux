@@ -1,3 +1,5 @@
+import SataticInfo from "../SataticInfo";
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
@@ -8,7 +10,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <main className="m-10">{children}</main>
 
-      <footer className="m-10">Footer</footer>
+      <footer className="m-10">
+        <SataticInfo />
+      </footer>
     </>
   );
 };
