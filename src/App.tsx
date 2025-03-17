@@ -3,6 +3,7 @@ import { ThemeProvider } from "./components/theme.tsx";
 import TodoList from "./components/TodoList.tsx";
 import AddTodo from "./components/AddTodo.tsx";
 import Filter from "./components/Filter.tsx";
+import Pagination from "./components/Pagination.tsx";
 const App = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const App = () => {
           <AddTodo />
           <Filter />
           <TodoList />
+          <Pagination />
         </Layout>
       </ThemeProvider>
     </>
