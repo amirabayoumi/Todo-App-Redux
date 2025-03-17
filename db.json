@@ -17,7 +17,7 @@
     {
       "id": "4",
       "text": "Read a book",
-      "completed": true,
+      "completed": false,
       "category": "Personal",
       "description": "Read at least 20 pages of a fiction or self-improvement book."
     },
@@ -62,6 +62,18 @@
       "completed": true,
       "category": "Learning",
       "description": "Read and understand a new chapter from a programming or tech book."
+    },
+    {
+      "id": "8a17",
+      "text": "new task",
+      "completed": true,
+      "category": "Shopping"
+    },
+    {
+      "id": "2c77",
+      "text": "new task",
+      "completed": false,
+      "category": "Shopping"
     }
   ],
   "categories": [

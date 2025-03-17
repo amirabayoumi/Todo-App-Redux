@@ -41,7 +41,7 @@ const TodoItem = ({
       <Collapsible>
         <CollapsibleTrigger className="m-0 w-full">
           <li
-            className="mt-2 flex justify-between rounded-lg border border-slate-400 py-3"
+            className="mt-2 flex justify-between rounded-lg border border-slate-400 p-3"
             key={id}
           >
             <div className="flex gap-4">
