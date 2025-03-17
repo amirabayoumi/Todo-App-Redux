@@ -5,21 +5,25 @@ type PropType = {
   todo: Todo;
 };
 
-const TodoItem = ({ todo: { id, text, completed } }: PropType) => {
+const TodoItem = ({ todo: { id, text, completed, category } }: PropType) => {
   const [removeTodo] = useRemoveTodoMutation();
   const [toggleTodo] = useToggleTodoMutation();
   return (
     <li
-      style={{ textDecoration: completed ? "line-through" : "none" }}
-      className="mr-3 flex justify-between border border-slate-400 p-3"
+      className="my-2 flex justify-between border border-slate-400 p-3"
       key={id}
     >
-      <span>{text}</span>
-      <div>
+      <div className="flex gap-4">
+        {" "}
         <button onClick={() => toggleTodo({ id, checked: !completed })}>
-          {completed ? "Undo" : "Done"}
+          {" "}
+          done
         </button>
-        <button onClick={() => removeTodo(id)}>Delete</button>
+        <span>{text}</span>
+      </div>
+
+      <div className="flex gap-4">
+        <p>{category}</p> <button onClick={() => removeTodo(id)}>Delete</button>
       </div>
     </li>
   );

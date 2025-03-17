@@ -3,6 +3,7 @@ import TodoItem from "./TodoItem";
 
 const TodoList = () => {
   const { data } = useGetTodosQuery();
+  console.log(data);
   return (
     <ul className="flex flex-col gap-2">
       {data &&

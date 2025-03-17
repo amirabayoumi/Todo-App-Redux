@@ -10,7 +10,8 @@
       "id": "2",
       "text": "Build a todo app",
       "completed": false,
-      "category": "Work"
+      "category": "Work",
+      "checked": true
     },
     {
       "id": "3",
