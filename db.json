@@ -86,6 +86,12 @@
       "text": "new task",
       "completed": false,
       "category": "Personal"
+    },
+    {
+      "id": "a7f7",
+      "text": "new task",
+      "completed": false,
+      "category": "Shopping"
     }
   ],
   "categories": [
