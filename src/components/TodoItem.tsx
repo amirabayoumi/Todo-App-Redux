@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/collapsible";
 
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 
 type PropType = {
   todo: Todo;
@@ -53,7 +54,10 @@ const TodoItem = ({
                 className=""
                 type="checkbox"
                 checked={completed}
-                onChange={() => toggleTodo({ id, completed: !completed })}
+                onChange={() => {
+                  toggleTodo({ id, completed: !completed });
+                  toast.success("Todo updated successfully");
+                }}
               />
               <span>{text}</span>
             </div>
@@ -69,7 +73,10 @@ const TodoItem = ({
               </Badge>
 
               <button
-                onClick={() => removeTodo(id)}
+                onClick={() => {
+                  removeTodo(id);
+                  toast.success("Todo deleted successfully");
+                }}
                 className="font-mono font-bold"
               >
                 X

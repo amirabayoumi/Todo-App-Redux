@@ -8,13 +8,6 @@
       "description": "Plan and develop a simple to-do application with React and Tailwind."
     },
     {
-      "id": "3",
-      "text": "Go for a run",
-      "completed": true,
-      "category": "Personal",
-      "description": "Run 5 kilometers in the park to maintain fitness and reduce stress."
-    },
-    {
       "id": "4",
       "text": "Read a book",
       "completed": true,

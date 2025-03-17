@@ -4,6 +4,7 @@ import TodoList from "./components/TodoList.tsx";
 import AddTodo from "./components/AddTodo.tsx";
 import Filter from "./components/Filter.tsx";
 import Pagination from "./components/Pagination.tsx";
+import { Toaster } from "@/components/ui/sonner";
 const App = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const App = () => {
           <Filter />
           <TodoList />
           <Pagination />
+          <Toaster />
         </Layout>
       </ThemeProvider>
     </>
