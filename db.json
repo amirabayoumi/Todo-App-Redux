@@ -3,102 +3,65 @@
     {
       "id": "2",
       "text": "Build a todo app",
-      "completed": false,
+      "completed": true,
       "category": "Work",
-      "checked": true
+      "description": "Plan and develop a simple to-do application with React and Tailwind."
     },
     {
       "id": "3",
       "text": "Go for a run",
       "completed": true,
-      "category": "Personal"
+      "category": "Personal",
+      "description": "Run 5 kilometers in the park to maintain fitness and reduce stress."
     },
     {
       "id": "4",
       "text": "Read a book",
       "completed": true,
-      "category": "Personal"
-    },
-    {
-      "id": "5",
-      "text": "Buy groceries",
-      "completed": true,
-      "category": "Shopping",
-      "checked": true
-    },
-    {
-      "id": "6",
-      "text": "Prepare presentation for client meeting",
-      "completed": false,
-      "category": "Work",
-      "checked": true
+      "category": "Personal",
+      "description": "Read at least 20 pages of a fiction or self-improvement book."
     },
     {
       "id": "9",
       "text": "Fix bug in login component",
       "completed": true,
-      "category": "Work"
-    },
-    {
-      "id": "10",
-      "text": "Attend team standup",
-      "completed": false,
       "category": "Work",
-      "checked": true
-    },
-    {
-      "id": "18",
-      "text": "Call mom",
-      "completed": true,
-      "category": "Personal"
+      "description": "Investigate and resolve authentication issue in the login form."
     },
     {
       "id": "19",
       "text": "Schedule dentist appointment",
       "completed": false,
-      "category": "Personal"
+      "category": "Personal",
+      "description": "Book an appointment for a routine dental check-up next week."
     },
     {
       "id": "39",
       "text": "30 minute workout",
       "completed": false,
-      "category": "Health"
+      "category": "Health",
+      "description": "Perform a mix of cardio and strength exercises for at least 30 minutes."
     },
     {
       "id": "40",
       "text": "Drink 8 glasses of water",
       "completed": true,
-      "category": "Health"
+      "category": "Health",
+      "description": "Ensure proper hydration by drinking sufficient water throughout the day."
     },
     {
       "id": "47",
       "text": "Complete online course module",
       "completed": false,
-      "category": "Learning"
+      "category": "Learning",
+      "description": "Finish the next module in an ongoing online course."
     },
     {
       "id": "48",
       "text": "Read chapter of technical book",
       "completed": true,
-      "category": "Learning"
-    },
-    {
-      "id": "ef30",
-      "text": "new task",
-      "completed": false,
-      "category": "Personal"
-    },
-    {
-      "id": "dacd",
-      "text": "new task",
-      "completed": false,
-      "category": "Personal"
-    },
-    {
-      "id": "176d",
-      "text": "new task",
-      "completed": false,
-      "category": "Work"
+      "category": "Learning",
+      "description": "Read and understand a new chapter from a programming or tech book."
     }
   ],
   "categories": [

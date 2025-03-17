@@ -5,6 +5,7 @@ export type Todo = {
   text: string;
   completed: boolean;
   category: string;
+  description: string;
 };
 
 const todosApi = createApi({
