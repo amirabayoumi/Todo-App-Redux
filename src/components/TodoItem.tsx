@@ -15,10 +15,15 @@ const TodoItem = ({ todo: { id, text, completed, category } }: PropType) => {
     >
       <div className="flex gap-4">
         {" "}
-        <button onClick={() => toggleTodo({ id, checked: !completed })}>
+        <button onClick={() => toggleTodo({ id, completed: !completed })}>
           {" "}
-          done
+          {/* {completed ? "✅" : "❌"} */}
         </button>
+        <input
+          type="checkbox"
+          checked={completed} // Ensure the checkbox reflects the correct state
+          onChange={() => toggleTodo({ id, completed: !completed })}
+        />
         <span>{text}</span>
       </div>
 

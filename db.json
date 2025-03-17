@@ -16,26 +16,28 @@
     {
       "id": "3",
       "text": "Go for a run",
-      "completed": false,
+      "completed": true,
       "category": "Personal"
     },
     {
       "id": "4",
       "text": "Read a book",
-      "completed": false,
+      "completed": true,
       "category": "Personal"
     },
     {
       "id": "5",
       "text": "Buy groceries",
-      "completed": false,
-      "category": "Shopping"
+      "completed": true,
+      "category": "Shopping",
+      "checked": true
     },
     {
       "id": "6",
       "text": "Prepare presentation for client meeting",
       "completed": false,
-      "category": "Work"
+      "category": "Work",
+      "checked": true
     },
     {
       "id": "9",
@@ -85,6 +87,30 @@
       "text": "Read chapter of technical book",
       "completed": true,
       "category": "Learning"
+    },
+    {
+      "id": "cbd5",
+      "text": "task ",
+      "completed": true
+    },
+    {
+      "id": "66a1",
+      "text": "new task",
+      "completed": false
+    },
+    {
+      "id": "94b7",
+      "completed": false
+    },
+    {
+      "id": "7176",
+      "completed": false
+    },
+    {
+      "id": "ef30",
+      "text": "new task",
+      "completed": false,
+      "category": "Personal"
     }
   ],
   "categories": [

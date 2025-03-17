@@ -25,22 +25,23 @@ const todosApi = createApi({
     getTodoById: builder.query<Todo, string>({
       query: (id) => `/${id}`,
     }),
-    addTodo: builder.mutation<Todo, string>({
-      query: (str) => ({
+    addTodo: builder.mutation<Todo, { text: string; category: string }>({
+      query: ({ text, category }) => ({
         url: "/",
         method: "POST",
         body: {
-          text: str,
-          checked: false,
+          text: text,
+          completed: false,
+          category: category,
         },
       }),
       invalidatesTags: ["Todos"],
     }),
-    toggleTodo: builder.mutation<Todo, { id: string; checked: boolean }>({
-      query: ({ id, checked }) => ({
+    toggleTodo: builder.mutation<Todo, { id: string; completed: boolean }>({
+      query: ({ id, completed }) => ({
         url: `/${id}`,
         method: "PATCH",
-        body: { checked },
+        body: { completed },
       }),
       invalidatesTags: ["Todos"],
     }),
