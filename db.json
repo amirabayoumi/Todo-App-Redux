@@ -1,66 +1,25 @@
 {
   "todos": [
     {
-      "id": "2",
-      "text": "Build a todo app",
-      "completed": true,
-      "category": "Work",
-      "description": "Plan and develop a simple to-do application with React and Tailwind."
-    },
-    {
-      "id": "4",
-      "text": "Read a book",
-      "completed": true,
-      "category": "Personal",
-      "description": "Read at least 20 pages of a fiction or self-improvement book."
-    },
-    {
       "id": "9",
       "text": "Fix bug in login component",
-      "completed": true,
+      "completed": false,
       "category": "Work",
       "description": "Investigate and resolve authentication issue in the login form."
     },
     {
-      "id": "19",
-      "text": "Schedule dentist appointment",
-      "completed": true,
-      "category": "Personal",
-      "description": "Book an appointment for a routine dental check-up next week."
-    },
-    {
-      "id": "39",
-      "text": "30 minute workout",
-      "completed": true,
-      "category": "Health",
-      "description": "Perform a mix of cardio and strength exercises for at least 30 minutes."
-    },
-    {
-      "id": "40",
-      "text": "Drink 8 glasses of water",
-      "completed": true,
-      "category": "Health",
-      "description": "Ensure proper hydration by drinking sufficient water throughout the day."
-    },
-    {
       "id": "47",
-      "text": "Complete online course module",
-      "completed": true,
-      "category": "Learning",
-      "description": "Finish the next module in an ongoing online course."
+      "text": "test test test ",
+      "completed": false,
+      "category": "Personal",
+      "description": "test test test "
     },
     {
       "id": "48",
-      "text": "Read chapter of technical book",
+      "text": "test edit ",
       "completed": true,
       "category": "Learning",
-      "description": "Read and understand a new chapter from a programming or tech book."
-    },
-    {
-      "id": "8a17",
-      "text": "new task",
-      "completed": true,
-      "category": "Shopping"
+      "description": "test edit "
     },
     {
       "id": "2c77",
@@ -75,16 +34,88 @@
       "category": "Personal"
     },
     {
-      "id": "8fa6",
-      "text": "new task",
-      "completed": false,
-      "category": "Personal"
-    },
-    {
       "id": "a7f7",
       "text": "new task",
       "completed": false,
       "category": "Shopping"
+    },
+    {
+      "id": "733d",
+      "text": "new task",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "ecf8",
+      "text": "new task",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "b15a",
+      "text": "new task",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "41e1",
+      "text": "",
+      "completed": false,
+      "category": "Personal"
+    },
+    {
+      "id": "f452",
+      "text": "",
+      "completed": false,
+      "category": "Personal"
+    },
+    {
+      "id": "fc10",
+      "text": "new task",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "3fda",
+      "text": "ddddddbbbbvvvvvvvvv",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "f8f6",
+      "text": "",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "720c",
+      "text": "",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "880a",
+      "text": "",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "7e58",
+      "text": "",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "7e6b",
+      "text": "",
+      "completed": false,
+      "category": "Work"
+    },
+    {
+      "id": "99b4",
+      "text": "test",
+      "completed": false,
+      "category": "Work"
     }
   ],
   "categories": [
