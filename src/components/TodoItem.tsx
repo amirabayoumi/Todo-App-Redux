@@ -110,11 +110,21 @@ const TodoItem = ({
               {category}
             </Badge>
 
+            {/* Dialog trigger */}
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger onClick={(e) => e.stopPropagation()}>
                 <MdModeEdit />
               </DialogTrigger>
-              <DialogContent>
+
+              {/* Overlay when dialog is open */}
+              {isDialogOpen && (
+                <div
+                  className="bg-opacity-50 fixed inset-0 z-40 bg-black"
+                  onClick={() => setIsDialogOpen(false)} // close dialog if background is clicked
+                />
+              )}
+
+              <DialogContent className="z-50">
                 <DialogHeader>
                   <DialogTitle>Edit Your Todo</DialogTitle>
                   <DialogDescription>
