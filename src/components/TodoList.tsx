@@ -26,12 +26,10 @@ const TodoList = () => {
     return <p>No data found.</p>;
   }
 
-  // Calculate static information
   const totalTodos = data.length;
   const activeTodos = data.filter((todo) => !todo.completed).length;
   const completedTodos = data.filter((todo) => todo.completed).length;
 
-  // Dispatch updateStatic with calculated values
   dispatch(
     updateStatic({
       totalTodos,
@@ -50,9 +48,6 @@ const TodoList = () => {
     return statusMatch && categoryMatch;
   });
 
-  // Dispatch updateStatic with calculated values
-
-  //pagination
   const totalPages = Math.ceil(filteredData.length / perPage.page);
   const startIndex = (page - 1) * perPage.page;
   const endIndex = startIndex + perPage.page;
@@ -72,7 +67,6 @@ const TodoList = () => {
         )}
       </ul>
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <div className="mt-4 flex justify-center gap-2">
           {[...Array(totalPages)].map((_, index) => (
@@ -80,7 +74,7 @@ const TodoList = () => {
               key={index}
               className={`${
                 page === index + 1 ? "bg-blue-500" : "bg-gray-200"
-              } rounded-lg px-4 py-2`}
+              } rounded-lg px-4 py-2 text-black`}
               onClick={() => handlePageChange(index + 1)}
             >
               {index + 1}

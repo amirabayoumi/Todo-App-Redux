@@ -23,9 +23,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import clsx from "clsx";
 
 type PropType = {
   todo: Todo;
+};
+
+const categoryVariants = {
+  Work: "bg-orange-500 text-white",
+  Personal: "bg-red-500 text-white",
+  Shopping: "bg-blue-500 text-white",
+  Health: "bg-green-500 text-white",
+  Learning: "bg-purple-500 text-white",
+  default: "bg-gray-500 text-white",
 };
 
 const TodoItem = ({
@@ -41,21 +51,8 @@ const TodoItem = ({
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const getCategoryColor = (category: string): string => {
-    const categories: { [key: string]: string } = {
-      Work: "#f59e0b",
-      Personal: "#ef4444",
-      Shopping: "#3b82f6",
-      Health: "#10b981",
-      Learning: "#8b5cf6",
-    };
-
-    return categories[category] || "#6b7280";
-  };
-
   const handleUpdateSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
     updateTodo({
       id,
       text: updatedText,
@@ -63,93 +60,82 @@ const TodoItem = ({
       description: updatedDescription,
     });
     toast.success("Todo Edited successfully");
-
     setIsDialogOpen(false);
   };
 
   return (
     <Collapsible>
-      <CollapsibleTrigger className="m-0 w-full">
+      <CollapsibleTrigger className="w-full">
         <li
-          className={`mt-2 flex justify-between rounded-lg border p-3 ${
-            completed ? "bg-slate-400" : "bg-slate-100"
-          }`}
+          className={clsx(
+            "mt-2 flex justify-between rounded-lg border p-3 transition-all",
+            completed ? "bg-gray-300" : "bg-gray-100 hover:bg-gray-200",
+          )}
           key={id}
         >
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 toggleTodo({ id, completed: !completed });
+                toast.success("Todo updated successfully");
               }}
             >
-              <input
-                className=""
-                type="checkbox"
-                checked={completed}
-                onChange={() => {
-                  toggleTodo({ id, completed: !completed });
-                  toast.success("Todo updated successfully");
-                }}
-              />
+              <input type="checkbox" checked={completed} readOnly />
             </button>
             <span
-              className={`text-slate-600 ${completed ? "line-through" : ""}`}
+              className={clsx("text-gray-700", completed && "line-through")}
             >
               {text}
             </span>
           </div>
 
-          <div className="align-center flex gap-4">
+          <div className="flex items-center gap-4">
             <Badge
-              style={{
-                backgroundColor: getCategoryColor(category),
-                color: "white",
-              }}
+              className={
+                categoryVariants[category as keyof typeof categoryVariants] ||
+                categoryVariants.default
+              }
             >
               {category}
             </Badge>
 
-            {/* Dialog trigger */}
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger onClick={(e) => e.stopPropagation()}>
-                <MdModeEdit />
+                <MdModeEdit className="cursor-pointer text-cyan-900" />
               </DialogTrigger>
 
-              {/* Overlay when dialog is open */}
-              {isDialogOpen && (
-                <div
-                  className="bg-opacity-50 fixed inset-0 z-40 bg-black"
-                  onClick={() => setIsDialogOpen(false)} // close dialog if background is clicked
-                />
-              )}
-
-              <DialogContent className="z-50">
+              <DialogContent
+                className="max-w-lg"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <DialogHeader>
-                  <DialogTitle>Edit Your Todo</DialogTitle>
+                  <DialogTitle>Edit Todo</DialogTitle>
                   <DialogDescription>
                     <form
-                      className="my-10 flex flex-col gap-4"
+                      className="my-5 flex flex-col gap-4"
                       onSubmit={handleUpdateSubmit}
                     >
                       <div>
-                        <label htmlFor="text">Edit Todo Title :</label>
+                        <label className="block text-sm font-medium">
+                          Title:
+                        </label>
                         <input
                           type="text"
                           value={updatedText}
                           onChange={(e) => setUpdatedText(e.target.value)}
-                          className="rounded-lg border border-gray-400 px-4 py-3"
-                          placeholder={text}
-                          style={{ width: "70%" }}
+                          className="w-full rounded-lg border border-gray-400 px-4 py-3 focus:ring focus:ring-cyan-500"
                         />
                       </div>
+
                       <div>
-                        <label htmlFor="category">Edit Todo category:</label>
+                        <label className="block text-sm font-medium">
+                          Category:
+                        </label>
                         <select
-                          id="category"
                           value={updatedCategory}
                           onChange={(e) => setUpdatedCategory(e.target.value)}
-                          className="w-full rounded-lg border border-gray-400 p-2"
+                          className="w-full rounded-lg border border-gray-400 p-2 focus:ring focus:ring-cyan-500"
                         >
                           {[
                             "Work",
@@ -164,23 +150,25 @@ const TodoItem = ({
                           ))}
                         </select>
                       </div>
+
                       <div>
-                        <label htmlFor="description">
-                          Edit Todo description:
+                        <label className="block text-sm font-medium">
+                          Description:
                         </label>
                         <Textarea
                           value={updatedDescription}
                           onChange={(e) =>
                             setUpdatedDescription(e.target.value)
                           }
-                          className="w-1.9/2 m-2 w-full border-slate-400 bg-white placeholder:text-slate-800"
+                          className="w-full border-gray-400 bg-white placeholder:text-gray-500 focus:ring focus:ring-cyan-500"
                         />
                       </div>
+
                       <button
-                        className="rounded-lg border bg-black px-4 py-3 text-white"
+                        className="rounded-lg bg-black px-4 py-3 text-white hover:bg-gray-800"
                         type="submit"
                       >
-                        Submit
+                        Save Changes
                       </button>
                     </form>
                   </DialogDescription>
@@ -189,11 +177,12 @@ const TodoItem = ({
             </Dialog>
 
             <button
-              onClick={() => {
+              onClick={(e) => {
                 removeTodo(id);
                 toast.success("Todo deleted successfully");
+                e.stopPropagation();
               }}
-              className="font-mono font-bold"
+              className="text-red-600 hover:text-red-800"
             >
               <AiFillDelete />
             </button>
@@ -202,11 +191,11 @@ const TodoItem = ({
       </CollapsibleTrigger>
 
       <CollapsibleContent>
-        <div className="flex translate-y-[-5px] flex-col rounded-b-lg border border-slate-400 bg-slate-100">
-          <label className="mt-2 rounded-b-lg px-3 font-medium text-slate-800">
-            Description
+        <div className="mt-[-6px] rounded-b-lg border-t border-gray-400 bg-gray-50 p-3">
+          <label className="block text-sm font-medium text-gray-800">
+            Description:
           </label>
-          <p className="w-1.9/2 m-2 rounded-lg border border-slate-500 bg-white px-3 py-2 text-slate-600">
+          <p className="mt-1 rounded-lg border border-gray-400 bg-white px-3 py-2 text-gray-600">
             {description}
           </p>
         </div>

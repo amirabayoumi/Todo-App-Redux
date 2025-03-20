@@ -22,10 +22,9 @@ export default function Filter() {
     }
   };
   return (
-    <div className="my-5 flex items-center gap-2">
-      {" "}
+    <div className="my-5 flex w-full flex-wrap items-center gap-4">
       <select
-        className="rounded-lg border border-slate-400 p-3 px-6 text-slate-600"
+        className="w-full rounded-lg border border-slate-400 bg-white p-3 px-6 text-slate-600 transition-all duration-200 hover:bg-slate-100 focus:ring-2 focus:ring-slate-300 sm:w-auto"
         id="category"
         onChange={handleOnChange}
       >
@@ -36,8 +35,9 @@ export default function Filter() {
         <option value="Health">Health</option>
         <option value="Learning">Learning</option>
       </select>
+
       <select
-        className="rounded-lg border border-slate-400 p-3 px-6 text-slate-600"
+        className="w-full rounded-lg border border-slate-400 bg-white p-3 px-6 text-slate-600 transition-all duration-200 hover:bg-slate-100 focus:ring-2 focus:ring-slate-300 sm:w-auto"
         id="status"
         onChange={handleOnChange}
       >
