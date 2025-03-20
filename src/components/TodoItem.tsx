@@ -55,6 +55,7 @@ const TodoItem = ({
 
   const handleUpdateSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     updateTodo({
       id,
       text: updatedText,
