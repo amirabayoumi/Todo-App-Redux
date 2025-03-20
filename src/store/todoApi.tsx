@@ -12,7 +12,7 @@ const todosApi = createApi({
   tagTypes: ["Todos"],
   reducerPath: "todosApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000/todos",
+    baseUrl: "https://speckle-understood-powder.glitch.me/todos",
   }),
   endpoints: (builder) => ({
     getTodos: builder.query<Todo[], void>({
@@ -30,6 +30,8 @@ const todosApi = createApi({
           text: text,
           completed: false,
           category: category,
+          description:
+            "No description has been added yet. Please include a thorough description that explains the task in detail, such as background information, deadlines, and any specific requirements.",
         },
       }),
       invalidatesTags: ["Todos"],
