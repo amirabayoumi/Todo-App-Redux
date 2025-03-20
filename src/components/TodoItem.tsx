@@ -55,7 +55,7 @@ const TodoItem = ({
 
   const handleUpdateSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    e.stopPropagation();
+
     updateTodo({
       id,
       text: updatedText,
@@ -77,7 +77,12 @@ const TodoItem = ({
           key={id}
         >
           <div className="flex gap-4">
-            <button onClick={() => toggleTodo({ id, completed: !completed })}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleTodo({ id, completed: !completed });
+              }}
+            >
               <input
                 className=""
                 type="checkbox"
@@ -106,7 +111,7 @@ const TodoItem = ({
             </Badge>
 
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-              <DialogTrigger>
+              <DialogTrigger onClick={(e) => e.stopPropagation()}>
                 <MdModeEdit />
               </DialogTrigger>
               <DialogContent>
